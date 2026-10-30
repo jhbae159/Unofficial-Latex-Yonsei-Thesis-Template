@@ -368,7 +368,7 @@
 % \@startsection suppress the indent of the first paragraph, but the
 % spec indents every paragraph.
 \renewcommand\section{\@startsection{section}{1}{13pt}%
-  {3.5ex \@plus 1ex \@minus .2ex}{1.5ex \@plus .2ex}%
+  {3.5ex \@plus 1ex \@minus .2ex}{2.8ex \@plus .2ex}%
   {\normalfont\yonsei@sizesub\bfseries}}
 % After-skip of a subsection matches the section->subsection gap
 % (3.25ex), so the first body line sits as far below "1.1.1" as "1.1.1"
@@ -485,7 +485,7 @@
   \phantomsection
   \addcontentsline{toc}{chapter}{Abstract}%
   {\centering\yonsei@sizesub\bfseries\@title\par}%
-  \vskip 1.5em
+  \vskip 3.3em   % title -> body: one extra blank line
   \@afterindenttrue\ignorespaces}{%   % first paragraph is indented too
   \par\clearpage}
 
@@ -503,7 +503,7 @@
   \phantomsection
   \addcontentsline{toc}{chapter}{\headerkor}%
   {\centering\yonsei@sizesub\bfseries\titlekor\par}%  % Nanum Myeongjo Bold (moderately heavier)
-  \vskip 1.5em
+  \vskip 3.3em   % title -> body: one extra blank line
   % Korean "2칸" = two half-width spaces = one full-width character.
   \setlength{\parindent}{1em}%
   \@afterindenttrue\ignorespaces}{%   % first paragraph is indented too
