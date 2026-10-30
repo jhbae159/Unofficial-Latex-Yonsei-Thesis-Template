@@ -44,7 +44,7 @@
 %%     References / Abstract in Korean as 13 pt left headings
 %%     ........................................ \tableofcontents,
 %%     \yonsei@tocline, \l@chapter, \@makeschapterhead
-%%   - Figure / table labels "<Fig 1>", "<Table 1>" .. caption setup
+%%   - Figure / table labels "<Fig 2.1>", "<Table 2.1>" (per chapter) .. caption setup
 %%   - Chapter heading "1. Introduction" 16 pt bold on one line;
 %%     "1.1 Section" 13 pt bold ................. \@makechapterhead,
 %%     \section
@@ -381,6 +381,8 @@
   \setcounter{section}{0}%
   \gdef\@chapapp{Appendix}%
   \gdef\thechapter{\@arabic\c@chapter}%
+  \gdef\thefigure{A\arabic{chapter}.\arabic{figure}}%
+  \gdef\thetable{A\arabic{chapter}.\arabic{table}}%
   \@yonseiappendixtrue}
 
 % Sections: 13 pt bold ("1.1 Research background"). The Word sample
@@ -482,8 +484,10 @@
 %% Figures and tables: continuous numbering, "<Fig 1>" / "<Table 1>"
 %% ---------------------------------------------------------------------
 \RequirePackage{caption}
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
+% Figures and tables are numbered per chapter: "<Fig 2.1>", "<Table 3.2>";
+% in the appendices "<Fig A1.1>" (Appendix 1, first figure).
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
 \DeclareCaptionLabelFormat{yonsei}{\textless#1~#2\textgreater}
 \captionsetup{labelformat=yonsei,labelsep=space,font=normalsize,justification=centering}
 % A float that ends up alone on a page sits at the top, not mid-page.

@@ -99,8 +99,8 @@ Before changing anything here, re-check the sample
 | Signature page: 13 pt bold; `This certifies that the dissertation / of NAME is approved.`; per member a 1 cm signature line + 1 cm `Committee Chair | Prof. Name` row, columns 1/4.5/7.5/1 cm; footer dept / Graduate School / Yonsei University / month year | `mitthesis.cls` `signpage`, `\signpagehead`, `\signature`, `\signpagefoot`; `front/signature.tex.in` |
 | Signature titles unified `Prof.` / `Dr.` / none; count 3 master / 5 doctoral | `render_metadata.py` |
 | `TABLE OF CONTENTS` 16 pt centred, page i; entries not bold, small-dot leaders, page number centred in a 1 cm column, rows 0.78 cm; `1. Introduction`, `2.1` / `2.2.1` (no trailing period) stepped 13/26 pt; `Appendix 1. …` | `mitthesis.cls` `\tableofcontents`, `\yonsei@tocline`, `\l@chapter/section/subsection`; `front/cover.tex.in` `\pagenumbering{roman}` |
-| `List of Figures` / `List of Tables` 13 pt bold headings; entries `<Fig 1> …`, `<Table 1> …` with the same dot leaders | `mitthesis.cls` `\@makeschapterhead`, `\yonsei@listline`; `front/contents.tex` |
-| Figure/table captions `<Fig 1>`, `<Table 1>`, continuous numbering, body size | `mitthesis.cls` caption setup, `\counterwithout` |
+| `List of Figures` / `List of Tables` 13 pt bold headings; entries `<Fig 2.1> …`, `<Table 2.1> …` with the same dot leaders | `mitthesis.cls` `\@makeschapterhead`, `\yonsei@listline`; `front/contents.tex` |
+| Figure/table captions `<Fig 2.1>`, `<Table 2.1>` numbered per chapter (`<Fig A1.1>` in appendices), body size | `mitthesis.cls` caption setup, `\thefigure`/`\thetable` |
 | Abstract: `Abstract` 13 pt bold left → title 13 pt bold centred → body → full-width rule + `Keywords : …` | `mitthesis.cls` `abstractpage`, `\keywords`; `front/abstract.tex` |
 | Acknowledgements (optional, free-form): 16 pt bold centred heading like the TOC | `front/cover.tex.in` `\centerheading` |
 | Chapter heading `1. Introduction` 16 pt bold, one line; sections `1.1 …` 13 pt bold indented 13 pt, subsections 26 pt; first paragraph after every heading indented | `mitthesis.cls` `\@makechapterhead`, `\section` (positive before-skip), `\@afterindenttrue` |
