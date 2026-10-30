@@ -461,6 +461,12 @@
 % A float that ends up alone on a page sits at the top, not mid-page.
 \setlength{\@fptop}{0pt}
 \setlength{\@fpbot}{0pt plus 1fil}
+% rotating.sty copies \@fptop/\@fpbot into \rotFPtop/\rotFPbot when it is
+% loaded; sideways floats need both stretchable or they end up pushed
+% against the left margin instead of centred. Restore them.
+\AtBeginDocument{\@ifpackageloaded{rotating}{%
+  \setlength{\rotFPtop}{0pt plus 1fil}%
+  \setlength{\rotFPbot}{0pt plus 1fil}}{}}
 
 %% ---------------------------------------------------------------------
 %% Abstract pages
