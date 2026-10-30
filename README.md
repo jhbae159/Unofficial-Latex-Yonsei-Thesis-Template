@@ -141,8 +141,9 @@ Do not publish personal signatures in a public repository.
   signature rows; advisors listed as `Advisor : Name1·Name2`.
 - Roman numbering starts at the contents; Arabic numbering restarts at chapter 1.
   Cover through acknowledgements have no printed page numbers.
-- Dot-leader contents and lists; headings such as `1. Introduction`; continuous
-  figure/table numbering with `<Fig 1>` and `<Table 1>` captions.
+- Dot-leader contents and lists; headings such as `1. Introduction`; per-chapter
+  figure/table numbering with `<Fig 2.1>` and `<Table 2.1>` captions
+  (`<Fig A1.1>` in appendices).
 - Abstracts with title, body, horizontal rule and keywords; numeric IEEE citations
   and single-spaced reference entries.
 

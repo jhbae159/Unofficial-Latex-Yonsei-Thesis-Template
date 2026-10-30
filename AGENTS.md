@@ -10,7 +10,7 @@ spec**, built from `mitthesis.cls` — a class rewritten to follow the
 official English doctoral Word sample
 (`영문 MSword_박사학위논문_양식_2026.docx`) page by page: Times (newtx),
 exact row heights of the cover / title / signature tables, 10 pt body,
-`<Fig 1>` captions, dot-leader TOC, `Appendix 1.` appendices. Doctoral
+`<Fig 2.1>` per-chapter captions, dot-leader TOC, `Appendix 1.` appendices. Doctoral
 program by default; master's via one flag in `thesis.json`. English
 thesis with a Korean abstract at the end is the assumed shape. The tree
 also compiles unchanged on Overleaf (edit the generated files there).
@@ -78,7 +78,7 @@ forces this).
 | Adjust Korean abstract | `back/abstract_kor.tex` (content), `thesis.json` `title_kor` (Korean title). |
 | Verify a layout change | `scripts/build.sh && scripts/preview.sh <page-or-range>` and Read the resulting PNGs. |
 | Change a font size | The `\yonsei@size*` block near the top of `mitthesis.cls` (18 cover / 16 title+chapter / 13 subheadings), `\footnotesize` (9), body via `\documentclass[10pt]`. |
-| Change the figure/table label style (`<Fig 1>`) | `mitthesis.cls` caption block (`\DeclareCaptionLabelFormat{yonsei}`) and `\yonsei@listline`. |
+| Change the figure/table label style (`<Fig 2.1>`) | `mitthesis.cls` caption block (`\DeclareCaptionLabelFormat{yonsei}`) and `\yonsei@listline`. |
 
 ## Spec compliance map (Yonsei 2026)
 
