@@ -370,8 +370,11 @@
 \renewcommand\section{\@startsection{section}{1}{13pt}%
   {3.5ex \@plus 1ex \@minus .2ex}{1.5ex \@plus .2ex}%
   {\normalfont\yonsei@sizesub\bfseries}}
+% After-skip of a subsection matches the section->subsection gap
+% (3.25ex), so the first body line sits as far below "1.1.1" as "1.1.1"
+% sits below "1.1".
 \renewcommand\subsection{\@startsection{subsection}{2}{26pt}%
-  {3.25ex \@plus 1ex \@minus .2ex}{1.2ex \@plus .2ex}%
+  {3.25ex \@plus 1ex \@minus .2ex}{2.8ex \@plus .2ex}%
   {\normalfont\yonsei@sizesub\bfseries}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{39pt}%
   {3.25ex \@plus 1ex \@minus .2ex}{1ex \@plus .2ex}%
