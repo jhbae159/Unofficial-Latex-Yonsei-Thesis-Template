@@ -117,6 +117,9 @@
 \setlength{\parindent}{2em}       % "indent the beginning of paragraphs by 2 spaces"
                                   % (the Word sample uses 2 characters = 20 pt at 10 pt)
 \setlength{\parskip}{0pt}
+% Let TeX loosen a line a little rather than run long formulas into
+% the right margin (the spec requires a clean 3.5 cm margin).
+\setlength{\emergencystretch}{3em}
 \renewcommand{\footnotesize}{\fontsize{9}{11}\selectfont}
 
 %% Heading font sizes
