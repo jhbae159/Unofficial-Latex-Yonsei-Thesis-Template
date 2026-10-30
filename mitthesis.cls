@@ -347,8 +347,7 @@
     \addcontentsline{toc}{chapter}{#1}%
   \fi
   \chaptermark{#1}%
-  \addtocontents{lof}{\protect\addvspace{10\p@}}%
-  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  % (no per-chapter gap in the lists of figures/tables, as in the sample)
   \@makechapterhead{#2}%
   \@afterheading}
 
@@ -415,6 +414,7 @@
 \def\yonsei@tocline#1#2#3{%
   \par\begingroup
     \leftskip#1\relax \rightskip\z@ \parfillskip\z@ \parindent\z@
+    \hangindent 1.5em \hangafter 1   % continuation lines of long entries
     \interlinepenalty\@M
     \leavevmode #2\nobreak\hskip 0.2cm\nobreak
     \leaders\hbox to 2.5pt{\hss\yonsei@tocdot\hss}\hfill\nobreak
