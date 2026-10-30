@@ -98,6 +98,28 @@
 \RequirePackage{newtxmath}
 \RequirePackage{textcomp}
 \RequirePackage{CJKutf8}         % Korean (nanummj) for title_kor / abstract
+% CJK's \pickup@font takes its CJK branch whenever \CJK@plane is defined,
+% i.e. for ANY font selected after a CJK character in the same group —
+% including the Latin font that the page footer re-selects via \normalfont
+% while a Korean page is shipped out. CJKutf8 then attaches that plane's
+% ToUnicode CMap to the Latin font, and all Latin body text copies/searches
+% as Hangul garbage (seen when the Korean abstract runs to a second page).
+% Take the CJK branch only when the font being picked up really is a CJK
+% font (its NFSS encoding is the active CJK encoding, e.g. C70).
+\ifdefined\pdfstrcmp
+\let\yonsei@CJK@pickup@font\pickup@font
+\def\yonsei@latin@pickup@font{\expandafter\ifx\font@name\relax\define@newfont\fi}
+\def\pickup@font{%
+  \ifdefined\CJK@@@enc
+    \ifnum\pdfstrcmp{\f@encoding}{\CJK@@@enc}=\z@
+      \expandafter\expandafter\expandafter\yonsei@CJK@pickup@font
+    \else
+      \expandafter\expandafter\expandafter\yonsei@latin@pickup@font
+    \fi
+  \else
+    \expandafter\yonsei@latin@pickup@font
+  \fi}
+\fi
 \RequirePackage[english]{babel}
 
 %% ---------------------------------------------------------------------
@@ -374,10 +396,10 @@
 % (3.25ex), so the first body line sits as far below "1.1.1" as "1.1.1"
 % sits below "1.1".
 \renewcommand\subsection{\@startsection{subsection}{2}{26pt}%
-  {3.25ex \@plus 1ex \@minus .2ex}{2.8ex \@plus .2ex}%
+  {2ex \@plus 1ex \@minus .2ex}{2.8ex \@plus .2ex}%
   {\normalfont\yonsei@sizesub\bfseries}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{39pt}%
-  {3.25ex \@plus 1ex \@minus .2ex}{1ex \@plus .2ex}%
+  {2ex \@plus 1ex \@minus .2ex}{2.8ex \@plus .2ex}%
   {\normalfont\normalsize\bfseries}}
 \@afterindenttrue
 \renewcommand{\@afterheading}{%
