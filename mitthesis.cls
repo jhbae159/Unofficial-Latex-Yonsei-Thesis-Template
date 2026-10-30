@@ -474,7 +474,7 @@
   \addcontentsline{toc}{chapter}{Abstract}%
   {\centering\yonsei@sizesub\bfseries\@title\par}%
   \vskip 1.5em
-  \@afterindenttrue\noindent\ignorespaces}{%
+  \@afterindenttrue\ignorespaces}{%   % first paragraph is indented too
   \par\clearpage}
 
 \newcommand{\keywords}[1]{%
@@ -494,7 +494,7 @@
   \vskip 1.5em
   % Korean "2칸" = two half-width spaces = one full-width character.
   \setlength{\parindent}{1em}%
-  \@afterindenttrue\noindent\ignorespaces}{%
+  \@afterindenttrue\ignorespaces}{%   % first paragraph is indented too
   \par\clearpage}
 
 % \keywordskor{핵심되는 말}{keyword, ...} — the label is passed in from
